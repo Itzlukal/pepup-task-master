@@ -29,13 +29,19 @@ const MenuItem = () => {
   const [menuItems, setMenuItems] = useState<MenuItemData[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/menu")
-      .then((response) => response.json())
-      .then((data: MenuItemData[]) => {
-        console.log(data);
+    const getMenuItems = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/menu", {
+          method: "GET",
+        });
+        const data = await response.json();
         setMenuItems(data);
-      })
-      .catch((error) => console.error("Error fetching menu data: ", error));
+      } catch (error) {
+        console.error("Error fetching menu data: ", error);
+      }
+    };
+
+    getMenuItems();
   }, []);
 
   const handleDelete = (id: number) => {
@@ -47,7 +53,7 @@ const MenuItem = () => {
         method: "DELETE",
       })
         .then((response) => response.json())
-        .then((data) => {
+        .then(() => {
           setMenuItems((prevMenuItems) =>
             prevMenuItems.filter((menuItem) => menuItem.id !== id)
           );

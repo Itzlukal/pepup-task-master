@@ -14,3 +14,10 @@ export const Subtitle = styled.h2`
   align-items: center;
   color: black;
 `;
+export const Container = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+export const Button = styled.button`
+  align-self: flex-end;
+`;

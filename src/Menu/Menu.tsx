@@ -1,6 +1,6 @@
 import MenuItem from "./MenuItems/MenuItem";
 import { Grid } from "./MenuItems/Styled-components";
-import { Subtitle, Title } from "./Styled-components";
+import { Button, Subtitle, Title } from "./Styled-components";
 
 const Menu = () => {
   return (
@@ -12,6 +12,7 @@ const Menu = () => {
     >
       <Title> Top List</Title>
       <Subtitle>Our mainstay menu</Subtitle>
+      <Button>Order Now</Button>
       <Grid>
         <MenuItem />
       </Grid>
