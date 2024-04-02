@@ -1,0 +1,102 @@
+{
+  "menu": [
+    {
+      "id": "2",
+      "dish_name": "Grilled Salmon",
+      "description": "Fresh salmon fillet seasoned and grilled to perfection.",
+      "score": 4,
+      "ingredients": [
+        "Salmon fillet",
+        "Olive oil",
+        "Lemon",
+        "Garlic",
+        "Herbs"
+      ],
+      "price": 1
+    },
+    {
+      "id": "3",
+      "dish_name": "Caprese Salad",
+      "description": "Traditional Italian salad with fresh tomatoes, mozzarella cheese, basil, and balsamic glaze.",
+      "score": 7,
+      "ingredients": [
+        "Tomatoes",
+        "Fresh mozzarella",
+        "Basil",
+        "Balsamic glaze",
+        "Extra virgin olive oil"
+      ],
+      "price": 9.99
+    },
+    {
+      "id": "4",
+      "dish_name": "Chicken Alfredo",
+      "description": "Creamy Alfredo sauce tossed with grilled chicken and fettuccine pasta.",
+      "score": 9,
+      "ingredients": [
+        "Chicken breast",
+        "Fettuccine pasta",
+        "Heavy cream",
+        "Parmesan cheese",
+        "Garlic"
+      ],
+      "price": 13.99
+    },
+    {
+      "id": "5",
+      "dish_name": "Margarita Pizza",
+      "description": "Classic pizza topped with fresh tomatoes, mozzarella cheese, and basil leaves.",
+      "score": 2,
+      "ingredients": [
+        "Pizza dough",
+        "Tomatoes",
+        "Fresh mozzarella",
+        "Basil",
+        "Olive oil"
+      ],
+      "price": 11.99
+    },
+    {
+      "id": "6",
+      "dish_name": "Caesar Salad",
+      "description": "Romaine lettuce tossed with Caesar dressing, croutons, and Parmesan cheese.",
+      "score": 4,
+      "ingredients": [
+        "Romaine lettuce",
+        "Caesar dressing",
+        "Croutons",
+        "Parmesan cheese",
+        "Anchovies"
+      ],
+      "price": 8.99
+    },
+    {
+      "id": "7",
+      "dish_name": "Beef Burger",
+      "description": "Juicy beef patty topped with lettuce, tomato, onion, and pickles.",
+      "score": 6,
+      "ingredients": [
+        "Beef patty",
+        "Lettuce",
+        "Tomato",
+        "Onion",
+        "Pickles"
+      ],
+      "price": 10.99
+    },
+    {
+      "id": "8",
+      "dish_name": "Vegetable Stir-Fry",
+      "description": "Assorted fresh vegetables stir-fried in a savory sauce.",
+      "score": 10,
+      "ingredients": [
+        "Broccoli",
+        "Bell peppers",
+        "Carrots",
+        "Snap peas",
+        "Soy sauce"
+      ],
+      "price": 11.99
+    }
+  ]
+}
