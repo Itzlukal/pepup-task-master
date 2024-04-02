@@ -28,7 +28,7 @@ export const NavBarWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px;
+  margin: 30px;
   position: fixed;
   top: 0;
   left: 0;

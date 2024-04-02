@@ -1,3 +1,4 @@
+import Home from "../Home/Home";
 import NavBar from "../NavBar/NavBar";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       }}
     >
       <NavBar />
+      <Home />
     </div>
   );
 }

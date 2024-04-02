@@ -22,11 +22,9 @@ const NavBar = () => {
           <CustomComponent color="  #c0997a ">Eat</CustomComponent>
         </CustomFlex>
         <CustomFlex>
-          <NavBarItem onClick={() => scrollToSection("home")}>Home</NavBarItem>
-          <NavBarItem onClick={() => scrollToSection("hotels")}>
-            Menu
-          </NavBarItem>
-          <NavBarItem onClick={() => scrollToSection("restaurants")}>
+          <NavBarItem onClick={() => scrollToSection("Home")}>Home</NavBarItem>
+          <NavBarItem onClick={() => scrollToSection("Menu")}>Menu</NavBarItem>
+          <NavBarItem onClick={() => scrollToSection("About")}>
             About
           </NavBarItem>
         </CustomFlex>
