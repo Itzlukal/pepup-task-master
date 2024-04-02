@@ -5,15 +5,9 @@ import {
   CustomFlex,
   CustomComponent,
 } from "./styled-components";
+import { scrollToSection } from "../Utils/useScroll";
 
 const NavBar = () => {
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <CustomCenter>
       <NavBarWrapper>

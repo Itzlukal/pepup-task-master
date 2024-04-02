@@ -10,7 +10,6 @@ export const Wrapper = styled.div`
 
 export const TextWrapper = styled.div`
   max-width: 60%;
-  margin: 0 auto;
   flex-direction: column;
 `;
 

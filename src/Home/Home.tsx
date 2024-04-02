@@ -7,6 +7,7 @@ import {
   Title,
   Wrapper,
 } from "./styled-components";
+import { scrollToSection } from "../Utils/useScroll";
 
 const Home = () => {
   return (
@@ -19,7 +20,12 @@ const Home = () => {
             our daily consumer
           </Subtitle>
           <ButtonsWrapper>
-            <CustomButton color="#c0997c">Food Menu</CustomButton>
+            <CustomButton
+              color="#c0997c"
+              onClick={() => scrollToSection("Menu")}
+            >
+              Food Menu
+            </CustomButton>
             <CustomButton color="#ccb9a3">Book a Table</CustomButton>
           </ButtonsWrapper>
         </TextWrapper>

@@ -5,13 +5,8 @@
       "dish_name": "Grilled Salmon",
       "description": "Fresh salmon fillet seasoned and grilled to perfection.",
       "score": 4,
-      "ingredients": [
-        "Salmon fillet",
-        "Olive oil",
-        "Lemon",
-        "Garlic",
-        "Herbs"
-      ],
+      "image": "https://freepngimg.com/thumb/food/139210-food-plate-white-png-image-high-quality.png",
+      "ingredients": ["Salmon fillet", "Olive oil", "Lemon", "Garlic", "Herbs"],
       "price": 1
     },
     {
@@ -19,6 +14,7 @@
       "dish_name": "Caprese Salad",
       "description": "Traditional Italian salad with fresh tomatoes, mozzarella cheese, basil, and balsamic glaze.",
       "score": 7,
+      "image": "https://freepngimg.com/thumb/food/139065-food-plate-fish-free-download-png-hq.png",
       "ingredients": [
         "Tomatoes",
         "Fresh mozzarella",
@@ -33,6 +29,7 @@
       "dish_name": "Chicken Alfredo",
       "description": "Creamy Alfredo sauce tossed with grilled chicken and fettuccine pasta.",
       "score": 9,
+      "image": "https://i.pinimg.com/originals/6d/e8/cf/6de8cf9964ada92c0318af47aeb1be17.png",
       "ingredients": [
         "Chicken breast",
         "Fettuccine pasta",
@@ -47,6 +44,7 @@
       "dish_name": "Margarita Pizza",
       "description": "Classic pizza topped with fresh tomatoes, mozzarella cheese, and basil leaves.",
       "score": 2,
+      "image": "https://i.pinimg.com/originals/6d/e8/cf/6de8cf9964ada92c0318af47aeb1be17.png",
       "ingredients": [
         "Pizza dough",
         "Tomatoes",
@@ -61,6 +59,7 @@
       "dish_name": "Caesar Salad",
       "description": "Romaine lettuce tossed with Caesar dressing, croutons, and Parmesan cheese.",
       "score": 4,
+      "image": "https://purepng.com/public/uploads/large/purepng.com-food-platefood-meat-plate-tasty-grill-breakfast-dinner-french-fries-launch-941524624215fnp4x.png",
       "ingredients": [
         "Romaine lettuce",
         "Caesar dressing",
@@ -74,14 +73,9 @@
       "id": "7",
       "dish_name": "Beef Burger",
       "description": "Juicy beef patty topped with lettuce, tomato, onion, and pickles.",
+      "image": "https://i.pinimg.com/originals/6d/e8/cf/6de8cf9964ada92c0318af47aeb1be17.png",
       "score": 6,
-      "ingredients": [
-        "Beef patty",
-        "Lettuce",
-        "Tomato",
-        "Onion",
-        "Pickles"
-      ],
+      "ingredients": ["Beef patty", "Lettuce", "Tomato", "Onion", "Pickles"],
       "price": 10.99
     },
     {
@@ -89,6 +83,7 @@
       "dish_name": "Vegetable Stir-Fry",
       "description": "Assorted fresh vegetables stir-fried in a savory sauce.",
       "score": 10,
+      "image": "https://freepngimg.com/thumb/food/139206-food-plate-top-snack-view.png",
       "ingredients": [
         "Broccoli",
         "Bell peppers",

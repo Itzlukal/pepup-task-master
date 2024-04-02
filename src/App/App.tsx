@@ -1,15 +1,13 @@
 import Home from "../Home/Home";
+import Menu from "../Menu/Menu";
 import NavBar from "../NavBar/NavBar";
 
 function App() {
   return (
-    <div
-      style={{
-        height: "5000px",
-      }}
-    >
+    <div>
       <NavBar />
       <Home />
+      <Menu />
     </div>
   );
 }
