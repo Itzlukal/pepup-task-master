@@ -61,7 +61,9 @@ const MenuItem = () => {
             <Price>${menuItem.price}</Price>
             <CustomFlex>
               <ButtonWrapper>
-                <DeleteIcon onClick={() => handleDelete(menuItem.id)} />
+                <DeleteIcon
+                  onClick={() => handleDelete(menuItem.id, setMenuItems)}
+                />
               </ButtonWrapper>
               <ButtonWrapper>
                 <DriveFileRenameOutlineIcon />
