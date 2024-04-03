@@ -47,8 +47,14 @@ const AddItem = ({ setShowAddItem }: AddItemProps) => {
           type="number"
           placeholder="Price"
           value={price}
-          onChange={(e) => setPrice(e.target.value)}
+          onChange={(e) => {
+            const newPrice = Number(e.target.value);
+            if (newPrice >= 0) {
+              setPrice(newPrice.toString());
+            }
+          }}
           required
+          min={0}
         />
         <CustomInput
           type="number"
@@ -57,11 +63,12 @@ const AddItem = ({ setShowAddItem }: AddItemProps) => {
           onChange={(e) => {
             const newScore = Number(e.target.value);
             //this limits score to max of 10
-            if (newScore <= 10) {
+            if (newScore >= 0 && newScore <= 10) {
               setScore(newScore.toString());
             }
           }}
           required
+          min={0}
         />
         <CustomInput
           type="text"
