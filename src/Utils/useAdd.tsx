@@ -1,5 +1,4 @@
-import axios from "axios";
-import { NewItem } from "../AddItem/AddItem";
+import { AddItemProps, NewItem } from "../AddItem/AddItem";
 import { toast } from "react-toastify";
 
 //this is logic for adding a item to the menu
@@ -18,11 +17,20 @@ export const handleAddItem = ({
     imageUrl,
   };
 
-  axios
-    .post("http://localhost:3000/menu", newItem)
+  fetch("http://localhost:3000/menu", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newItem),
+  })
     .then((response) => {
-      console.log("Item added successfully:", response.data);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
     })
+
     .catch((error) => {
       console.error("Error adding item:", error);
     });
@@ -53,13 +61,10 @@ export const ToastSuccess = () => {
 };
 
 //this is eventHandler which handles adding a dish
-export const handleAddDish = ({
-  name,
-  price,
-  ingredients,
-  imageUrl,
-  score,
-}: NewItem) => {
+export const handleAddDish = (
+  { name, price, ingredients, imageUrl, score }: NewItem,
+  { setShowAddItem }: AddItemProps
+) => {
   if (name && price && ingredients && imageUrl && score) {
     const newItem: NewItem = {
       name,
@@ -69,6 +74,7 @@ export const handleAddDish = ({
       imageUrl,
     };
     handleAddItem(newItem);
+    setShowAddItem(false);
     ToastSuccess();
   } else {
     ToastWarning();

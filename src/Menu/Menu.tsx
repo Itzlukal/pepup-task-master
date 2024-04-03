@@ -3,6 +3,8 @@ import MenuItem from "./MenuItems/MenuItem";
 import { Grid } from "./MenuItems/Styled-components";
 import { Button, Header, Subtitle, Title } from "./Styled-components";
 import AddItem from "../AddItem/AddItem";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Menu = () => {
   const [showAddItem, setShowAddItem] = useState<boolean>(false);
@@ -25,6 +27,7 @@ const Menu = () => {
       <Grid>
         <MenuItem />
       </Grid>
+      <ToastContainer />
       {showAddItem && <AddItem setShowAddItem={setShowAddItem} />}
     </div>
   );

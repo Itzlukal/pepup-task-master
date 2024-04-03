@@ -6,13 +6,7 @@
       "description": "Fresh salmon fillet seasoned and grilled to perfection.",
       "score": 4,
       "image": "https://freepngimg.com/thumb/food/139210-food-plate-white-png-image-high-quality.png",
-      "ingredients": [
-        "Salmon fillet",
-        "Olive oil",
-        "Lemon",
-        "Garlic",
-        "Herbs"
-      ],
+      "ingredients": ["Salmon fillet", "Olive oil", "Lemon", "Garlic", "Herbs"],
       "price": 1
     },
     {
@@ -81,13 +75,7 @@
       "description": "Juicy beef patty topped with lettuce, tomato, onion, and pickles.",
       "image": "https://i.pinimg.com/originals/6d/e8/cf/6de8cf9964ada92c0318af47aeb1be17.png",
       "score": 6,
-      "ingredients": [
-        "Beef patty",
-        "Lettuce",
-        "Tomato",
-        "Onion",
-        "Pickles"
-      ],
+      "ingredients": ["Beef patty", "Lettuce", "Tomato", "Onion", "Pickles"],
       "price": 10.99
     },
     {

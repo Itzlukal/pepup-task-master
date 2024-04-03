@@ -9,8 +9,7 @@ import {
   CloseIconWrapper,
 } from "./Styled-components";
 import CloseIcon from "@mui/icons-material/Close";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import { handleAddDish } from "../Utils/useAdd";
 
 export interface NewItem {
@@ -20,7 +19,7 @@ export interface NewItem {
   ingredients: string;
   imageUrl: string;
 }
-interface AddItemProps {
+export interface AddItemProps {
   setShowAddItem: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const AddItem = ({ setShowAddItem }: AddItemProps) => {
@@ -88,20 +87,22 @@ const AddItem = ({ setShowAddItem }: AddItemProps) => {
       </GridContainer>
       <ButtonWrapper>
         <Button
-          onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
-            handleAddDish({
-              name,
-              price: Number(price),
-              score: Number(score),
-              ingredients,
-              imageUrl,
-            })
-          }
+          onClick={() => {
+            handleAddDish(
+              {
+                name,
+                price: Number(price),
+                score: Number(score),
+                ingredients,
+                imageUrl,
+              },
+              { setShowAddItem }
+            );
+          }}
         >
           Add
         </Button>
       </ButtonWrapper>
-      <ToastContainer />
     </Container>
   );
 };
