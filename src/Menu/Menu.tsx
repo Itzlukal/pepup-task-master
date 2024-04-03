@@ -22,7 +22,9 @@ const Menu = () => {
       <Header>
         <Title> Top List</Title>
         <Subtitle>Our mainstay menu</Subtitle>
-        <Button onClick={handleAddItemClick}>+ Add New Item</Button>
+        <Button hasMargin onClick={handleAddItemClick}>
+          + Add New Item
+        </Button>
       </Header>
       <Grid>
         <MenuItem />

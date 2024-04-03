@@ -38,3 +38,20 @@ export const CustomInput = styled.input`
     font-size: 16px;
   }
 `;
+
+export const CustomImage = styled.img`
+  width: 140px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+
+  @media (max-width: 600px) {
+    justify-self: center;
+  }
+`;
+
+export const ButtonWrapper = styled.div`
+  //it should be on the bottom of form
+  position: absolute;
+  bottom: 250px;
+`;

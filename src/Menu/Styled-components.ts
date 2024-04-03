@@ -23,8 +23,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
 `;
-export const Button = styled.button`
-  margin: 0 auto;
+export const Button = styled.button<{ hasMargin?: boolean }>`
+  margin: ${({ hasMargin }) => (hasMargin ? "0 auto" : "0")};
   border-radius: 20px;
   border: 2px solid #f88d26;
   background-color: transparent;

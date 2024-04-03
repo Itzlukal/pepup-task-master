@@ -14,8 +14,9 @@ import {
   Review,
   Title,
 } from "./Styled-components";
+import { handleDelete } from "../../Utils/useDelete";
 
-interface MenuItemData {
+export interface MenuItemData {
   description: string;
   dish_name: string;
   id: number;
@@ -43,25 +44,6 @@ const MenuItem = () => {
 
     getMenuItems();
   }, []);
-
-  const handleDelete = (id: number) => {
-    const confirmed = window.confirm(
-      "Are you sure you want to delete this item?"
-    );
-    if (confirmed) {
-      fetch(`http://localhost:3000/menu/${id}`, {
-        method: "DELETE",
-      })
-        .then((response) => response.json())
-        .then(() => {
-          setMenuItems((prevMenuItems) =>
-            prevMenuItems.filter((menuItem) => menuItem.id !== id)
-          );
-        })
-        .catch((error) => console.error("Error deleting menu item: ", error));
-    }
-  };
-
   return (
     <>
       {menuItems.map((menuItem) => (

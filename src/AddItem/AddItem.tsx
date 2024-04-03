@@ -1,6 +1,16 @@
-import { handleAddItem } from "../Utils/UseAdd";
-import { Container, CustomInput, GridContainer } from "./Styled-components";
 import { useState } from "react";
+import { Button } from "../Menu/Styled-components";
+import {
+  ButtonWrapper,
+  Container,
+  CustomImage,
+  CustomInput,
+  GridContainer,
+} from "./Styled-components";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { handleAddDish } from "../Utils/useAdd";
 
 export interface NewItem {
   name: string;
@@ -38,7 +48,13 @@ const AddItem = () => {
           type="number"
           placeholder="score"
           value={score}
-          onChange={(e) => setScore(e.target.value)}
+          onChange={(e) => {
+            const newScore = Number(e.target.value);
+            //this limits score to max of 10
+            if (newScore <= 10) {
+              setScore(newScore.toString());
+            }
+          }}
           required
         />
         <CustomInput
@@ -49,26 +65,30 @@ const AddItem = () => {
           required
         />
         <CustomInput
+          required
           type="text"
           placeholder="Image URL"
           value={imageUrl}
           onChange={(e) => setImageUrl(e.target.value)}
-          required
         />
+        {imageUrl && <CustomImage src={imageUrl} alt="Uploaded Image" />}
       </GridContainer>
-      <button
-        onClick={() =>
-          handleAddItem({
-            name,
-            price: Number(price),
-            score: Number(score),
-            ingredients,
-            imageUrl,
-          })
-        }
-      >
-        Add
-      </button>
+      <ButtonWrapper>
+        <Button
+          onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
+            handleAddDish({
+              name,
+              price: Number(price),
+              score: Number(score),
+              ingredients,
+              imageUrl,
+            })
+          }
+        >
+          Add
+        </Button>
+      </ButtonWrapper>
+      <ToastContainer />
     </Container>
   );
 };
