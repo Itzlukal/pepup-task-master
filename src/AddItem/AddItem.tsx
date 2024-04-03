@@ -22,7 +22,7 @@ export interface NewItem {
 }
 export interface AddItemProps {
   setShowAddItem: React.Dispatch<React.SetStateAction<boolean>>;
-  setMenuItems: React.Dispatch<React.SetStateAction<MenuItemData[]>>;
+  setMenuItems?: React.Dispatch<React.SetStateAction<MenuItemData[]>>;
 }
 const AddItem = ({ setShowAddItem, setMenuItems }: AddItemProps) => {
   const [name, setName] = useState("");

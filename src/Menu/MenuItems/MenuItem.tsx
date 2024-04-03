@@ -36,6 +36,7 @@ const MenuItem = () => {
       });
       const data = await response.json();
       setMenuItems(data);
+      console.log("Menu data fetched: ", data);
     } catch (error) {
       console.error("Error fetching menu data: ", error);
     }
@@ -43,7 +44,7 @@ const MenuItem = () => {
 
   useEffect(() => {
     getMenuItems();
-  }, [menuItems]);
+  }, []);
 
   return (
     <>
