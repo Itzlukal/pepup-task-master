@@ -5,11 +5,7 @@ import { Button, Header, Subtitle, Title } from "./Styled-components";
 import AddItem from "../AddItem/AddItem";
 
 const Menu = () => {
-  const [showAddItem, setShowAddItem] = useState(false);
-
-  const handleAddItemClick = () => {
-    setShowAddItem(true);
-  };
+  const [showAddItem, setShowAddItem] = useState<boolean>(false);
 
   return (
     <div
@@ -22,14 +18,14 @@ const Menu = () => {
       <Header>
         <Title> Top List</Title>
         <Subtitle>Our mainstay menu</Subtitle>
-        <Button hasMargin onClick={handleAddItemClick}>
+        <Button hasMargin onClick={() => setShowAddItem(true)}>
           + Add New Item
         </Button>
       </Header>
       <Grid>
         <MenuItem />
       </Grid>
-      {showAddItem && <AddItem />}
+      {showAddItem && <AddItem setShowAddItem={setShowAddItem} />}
     </div>
   );
 };

@@ -55,3 +55,17 @@ export const ButtonWrapper = styled.div`
   position: absolute;
   bottom: 250px;
 `;
+
+export const CloseIconWrapper = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 30px;
+  transition: all 0.5s ease;
+
+  &:hover {
+    color: red;
+  }
+`;

@@ -6,8 +6,9 @@ import {
   CustomImage,
   CustomInput,
   GridContainer,
+  CloseIconWrapper,
 } from "./Styled-components";
-
+import CloseIcon from "@mui/icons-material/Close";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { handleAddDish } from "../Utils/useAdd";
@@ -19,8 +20,10 @@ export interface NewItem {
   ingredients: string;
   imageUrl: string;
 }
-
-const AddItem = () => {
+interface AddItemProps {
+  setShowAddItem: React.Dispatch<React.SetStateAction<boolean>>;
+}
+const AddItem = ({ setShowAddItem }: AddItemProps) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [ingredients, setIngredients] = useState("");
@@ -29,6 +32,9 @@ const AddItem = () => {
 
   return (
     <Container>
+      <CloseIconWrapper>
+        <CloseIcon onClick={() => setShowAddItem(false)} />
+      </CloseIconWrapper>
       <GridContainer>
         <CustomInput
           type="text"
