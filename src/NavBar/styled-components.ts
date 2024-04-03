@@ -5,6 +5,7 @@ export const CustomCenter = styled.div`
   justify-content: center;
   width: 100%;
   margin: 20px;
+  z-index: 999;
 `;
 
 export const NavBarItem = styled.div`
@@ -14,6 +15,7 @@ export const NavBarItem = styled.div`
   cursor: pointer;
   padding: 10px;
   color: black;
+  z-index: 999;
 
   &:hover {
     border-bottom: 2px solid #8a7867;
@@ -33,6 +35,7 @@ export const NavBarWrapper = styled.div`
   top: 0;
   left: 0;
   right: 0;
+  z-index: 999;
 `;
 
 export const CustomComponent = styled.div<{ color: string }>`

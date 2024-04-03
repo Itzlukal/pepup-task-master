@@ -6,6 +6,10 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 export const TextWrapper = styled.div`
@@ -54,4 +58,7 @@ export const Photo = styled.div`
   background-position: center;
   width: 500px;
   height: 500px;
+  @media (max-width: 600px) {
+    margin: 0;
+  }
 `;

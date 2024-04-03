@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const Title = styled.h1`
   display: flex;
   justify-content: center;
@@ -19,5 +24,14 @@ export const Container = styled.div`
   justify-content: center;
 `;
 export const Button = styled.button`
-  align-self: flex-end;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 2px solid #f88d26;
+  background-color: transparent;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #f88d26;
+    border: 2px solid #f88d26;
+  }
 `;
