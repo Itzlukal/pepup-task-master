@@ -31,7 +31,7 @@ export const handleAddItem = ({
 //those are toast notifications one for success and one for failure
 export const ToastWarning = () => {
   toast.warning("Fill All Fields !", {
-    position: "top-right",
+    position: window.innerWidth < 768 ? "top-center" : "top-right",
     autoClose: 3000,
     hideProgressBar: false,
     closeOnClick: true,
@@ -42,7 +42,7 @@ export const ToastWarning = () => {
 };
 export const ToastSuccess = () => {
   toast.success("Item Added Succesfully !", {
-    position: "top-right",
+    position: window.innerWidth < 768 ? "top-center" : "top-right",
     autoClose: 3000,
     hideProgressBar: false,
     closeOnClick: true,
