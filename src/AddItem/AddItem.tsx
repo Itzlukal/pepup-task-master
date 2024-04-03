@@ -11,6 +11,7 @@ import {
 import CloseIcon from "@mui/icons-material/Close";
 
 import { handleAddDish } from "../Utils/useAdd";
+import { MenuItemData } from "../Menu/MenuItems/MenuItem";
 
 export interface NewItem {
   name: string;
@@ -21,18 +22,23 @@ export interface NewItem {
 }
 export interface AddItemProps {
   setShowAddItem: React.Dispatch<React.SetStateAction<boolean>>;
+  setMenuItems: React.Dispatch<React.SetStateAction<MenuItemData[]>>;
 }
-const AddItem = ({ setShowAddItem }: AddItemProps) => {
+const AddItem = ({ setShowAddItem, setMenuItems }: AddItemProps) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [score, setScore] = useState("");
 
+  const handleClose = () => {
+    setShowAddItem(false);
+  };
+
   return (
     <Container>
       <CloseIconWrapper>
-        <CloseIcon onClick={() => setShowAddItem(false)} />
+        <CloseIcon onClick={handleClose} />
       </CloseIconWrapper>
       <GridContainer>
         <CustomInput
@@ -61,7 +67,6 @@ const AddItem = ({ setShowAddItem }: AddItemProps) => {
           value={score}
           onChange={(e) => {
             const newScore = Number(e.target.value);
-            //this limits score to max of 10
             if (newScore >= 0 && newScore <= 10) {
               setScore(newScore.toString());
             }
@@ -96,7 +101,7 @@ const AddItem = ({ setShowAddItem }: AddItemProps) => {
                 ingredients,
                 imageUrl,
               },
-              { setShowAddItem }
+              { setShowAddItem, setMenuItems }
             );
           }}
         >

@@ -29,21 +29,22 @@ export interface MenuItemData {
 const MenuItem = () => {
   const [menuItems, setMenuItems] = useState<MenuItemData[]>([]);
 
-  useEffect(() => {
-    const getMenuItems = async () => {
-      try {
-        const response = await fetch("http://localhost:3000/menu", {
-          method: "GET",
-        });
-        const data = await response.json();
-        setMenuItems(data);
-      } catch (error) {
-        console.error("Error fetching menu data: ", error);
-      }
-    };
+  const getMenuItems = async () => {
+    try {
+      const response = await fetch("http://localhost:3000/menu", {
+        method: "GET",
+      });
+      const data = await response.json();
+      setMenuItems(data);
+    } catch (error) {
+      console.error("Error fetching menu data: ", error);
+    }
+  };
 
+  useEffect(() => {
     getMenuItems();
-  }, []);
+  }, [menuItems]);
+
   return (
     <>
       {menuItems.map((menuItem) => (
