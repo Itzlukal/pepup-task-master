@@ -13,8 +13,7 @@ const Menu = () => {
     <div
       id="Menu"
       style={{
-        height: "100vh",
-        position: "relative",
+        height: window.innerWidth < 768 ? "100%" : "100vh",
       }}
     >
       <Header>

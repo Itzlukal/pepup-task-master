@@ -28,6 +28,7 @@ export interface MenuItemData {
 
 const MenuItem = () => {
   const [menuItems, setMenuItems] = useState<MenuItemData[]>([]);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
 
   const getMenuItems = async () => {
     try {
@@ -44,36 +45,47 @@ const MenuItem = () => {
 
   useEffect(() => {
     getMenuItems();
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
+  const handleResize = () => {
+    setIsSmallScreen(window.innerWidth < 768);
+  };
 
   return (
     <>
-      {menuItems.map((menuItem) => (
-        <Container key={menuItem.id}>
-          <Photo src={menuItem.image} alt="Menu Item" />
-          <About>
-            <Review>
-              <StarIcon fontSize="medium" />
-              {menuItem.score}
-            </Review>
-            <Title>{menuItem.dish_name}</Title>
-            <Description>{menuItem.ingredients.join(", ")}</Description>
-          </About>
-          <Footer>
-            <Price>${menuItem.price}</Price>
-            <CustomFlex>
-              <ButtonWrapper>
-                <DeleteIcon
-                  onClick={() => handleDelete(menuItem.id, setMenuItems)}
-                />
-              </ButtonWrapper>
-              <ButtonWrapper>
-                <DriveFileRenameOutlineIcon />
-              </ButtonWrapper>
-            </CustomFlex>
-          </Footer>
-        </Container>
-      ))}
+      {menuItems
+        .slice(0, isSmallScreen ? 3 : menuItems.length)
+        .map((menuItem) => (
+          <Container key={menuItem.id}>
+            <Photo src={menuItem.image} alt="Menu Item" />
+            <About>
+              <Review>
+                <StarIcon fontSize="medium" />
+                {menuItem.score}
+              </Review>
+              <Title>{menuItem.dish_name}</Title>
+              <Description>{menuItem.ingredients.join(", ")}</Description>
+            </About>
+            <Footer>
+              <Price>${menuItem.price}</Price>
+              <CustomFlex>
+                <ButtonWrapper>
+                  <DeleteIcon
+                    onClick={() => handleDelete(menuItem.id, setMenuItems)}
+                  />
+                </ButtonWrapper>
+                <ButtonWrapper>
+                  <DriveFileRenameOutlineIcon />
+                </ButtonWrapper>
+              </CustomFlex>
+            </Footer>
+          </Container>
+        ))}
     </>
   );
 };

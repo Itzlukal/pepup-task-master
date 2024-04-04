@@ -6,6 +6,10 @@ export const Container = styled.div`
   width: 250px;
   border-radius: 20px;
   padding: 20px;
+
+  @media (max-width: 767px) {
+    width: 150px;
+  }
 `;
 
 export const Photo = styled.img`
