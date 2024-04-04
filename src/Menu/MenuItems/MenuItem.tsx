@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import StarIcon from "@mui/icons-material/Star";
 import DeleteIcon from "@mui/icons-material/Delete";
 import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
@@ -15,6 +14,7 @@ import {
   Title,
 } from "./Styled-components";
 import { handleDelete } from "../../Utils/useDelete";
+import { useMenuItemLogic } from "./useMenuItemLogic";
 
 export interface MenuItemData {
   description: string;
@@ -27,34 +27,13 @@ export interface MenuItemData {
 }
 
 const MenuItem = () => {
-  const [menuItems, setMenuItems] = useState<MenuItemData[]>([]);
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const {
+    menuItems,
+    isSmallScreen,
 
-  const getMenuItems = async () => {
-    try {
-      const response = await fetch("http://localhost:3000/menu", {
-        method: "GET",
-      });
-      const data = await response.json();
-      setMenuItems(data);
-      console.log("Menu data fetched: ", data);
-    } catch (error) {
-      console.error("Error fetching menu data: ", error);
-    }
-  };
-
-  useEffect(() => {
-    getMenuItems();
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const handleResize = () => {
-    setIsSmallScreen(window.innerWidth < 768);
-  };
+    handleEditItemClick,
+    setMenuItems,
+  } = useMenuItemLogic();
 
   return (
     <>
@@ -80,7 +59,7 @@ const MenuItem = () => {
                   />
                 </ButtonWrapper>
                 <ButtonWrapper>
-                  <DriveFileRenameOutlineIcon />
+                  <DriveFileRenameOutlineIcon onClick={handleEditItemClick} />
                 </ButtonWrapper>
               </CustomFlex>
             </Footer>

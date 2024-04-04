@@ -14,6 +14,7 @@ const Menu = () => {
       id="Menu"
       style={{
         height: window.innerWidth < 768 ? "100%" : "100vh",
+        position: window.innerWidth < 768 ? undefined : "relative",
       }}
     >
       <Header>
