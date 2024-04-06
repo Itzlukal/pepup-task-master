@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MenuItem from "./MenuItems/MenuItem";
+import MenuItem, { MenuItemData } from "./MenuItems/MenuItem";
 import { Grid } from "./MenuItems/Styled-components";
 import { Button, Header, Subtitle, Title } from "./Styled-components";
 import AddItem from "../AddItem/AddItem";
@@ -7,9 +7,22 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import EditItem from "../EditItem/EditItem";
 
-const Menu = () => {
+const Menu: React.FC = () => {
+  const [editedMenuItem, setEditedMenuItem] = useState<MenuItemData | null>(
+    null
+  );
+
   const [showAddItem, setShowAddItem] = useState<boolean>(false);
-  const [editVisible, setEditVisible] = useState<boolean>(false);
+
+  // const handleEditItemClick = (menuItemData: MenuItemData) => {
+  //   setEditedMenuItem(menuItemData);
+  //   setEditVisible(true);
+  // };
+
+  // const handleEditSubmit = (editedData: MenuItemData) => {
+  //   // Handle submission logic
+  //   setEditVisible(false);
+  // };
 
   return (
     <div
@@ -27,11 +40,10 @@ const Menu = () => {
         </Button>
       </Header>
       <Grid>
-        <MenuItem setEditVisible={setEditVisible} />
+        <MenuItem />
       </Grid>
       <ToastContainer />
       {showAddItem && <AddItem setShowAddItem={setShowAddItem} />}
-      {editVisible && <EditItem setEditVisible={setEditVisible} />}
     </div>
   );
 };

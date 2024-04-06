@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../Menu/Styled-components";
 import {
   ButtonWrapper,
@@ -9,17 +9,29 @@ import {
   CloseIconWrapper,
 } from "../AddItem/Styled-components";
 import CloseIcon from "@mui/icons-material/Close";
+import { MenuItemData } from "../Menu/MenuItems/MenuItem";
 
 export interface EditItemProps {
   setEditVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  selectedMenuItem?: MenuItemData | null;
 }
 
-const EditItem = ({ setEditVisible }: EditItemProps) => {
+const EditItem = ({ setEditVisible, selectedMenuItem }: EditItemProps) => {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [score, setScore] = useState("");
+
+  useEffect(() => {
+    if (selectedMenuItem) {
+      setName(selectedMenuItem.dish_name);
+      setPrice(selectedMenuItem.price.toString());
+      setIngredients(selectedMenuItem.ingredients.join(", "));
+      setImageUrl(selectedMenuItem.image);
+      setScore(selectedMenuItem.score.toString());
+    }
+  }, [selectedMenuItem]);
 
   return (
     <Container>
@@ -53,7 +65,7 @@ const EditItem = ({ setEditVisible }: EditItemProps) => {
         />
         <CustomInput
           type="number"
-          placeholder="score"
+          placeholder="Score"
           value={score}
           onChange={(e) => {
             const newScore = Number(e.target.value);
@@ -63,6 +75,7 @@ const EditItem = ({ setEditVisible }: EditItemProps) => {
           }}
           required
           min={0}
+          max={10}
         />
         <CustomInput
           type="text"

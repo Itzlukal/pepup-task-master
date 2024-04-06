@@ -15,7 +15,8 @@ import {
 } from "./Styled-components";
 import { handleDelete } from "../../Utils/useDelete";
 import { useMenuItemLogic } from "./useMenuItemLogic";
-import { EditItemProps } from "../../EditItem/EditItem";
+import EditItem, { EditItemProps } from "../../EditItem/EditItem";
+import { useState } from "react";
 
 export interface MenuItemData {
   description: string;
@@ -27,11 +28,22 @@ export interface MenuItemData {
   image: string;
 }
 
-const MenuItem = ({ setEditVisible }: EditItemProps) => {
+const MenuItem = () => {
+  const [editVisible, setEditVisible] = useState<boolean>(false);
+  const [selectedMenuItem, setSelectedMenuItem] = useState<MenuItemData | null>(
+    null
+  );
   const { menuItems, isSmallScreen, handleEditItemClick, setMenuItems } =
     useMenuItemLogic({
       setEditVisible,
     });
+
+  const handleEditClick = (menuItem: MenuItemData) => {
+    setSelectedMenuItem(menuItem);
+    handleEditItemClick();
+  };
+
+  console.log(selectedMenuItem);
 
   return (
     <>
@@ -57,12 +69,20 @@ const MenuItem = ({ setEditVisible }: EditItemProps) => {
                   />
                 </ButtonWrapper>
                 <ButtonWrapper>
-                  <DriveFileRenameOutlineIcon onClick={handleEditItemClick} />
+                  <DriveFileRenameOutlineIcon
+                    onClick={() => handleEditClick(menuItem)}
+                  />
                 </ButtonWrapper>
               </CustomFlex>
             </Footer>
           </Container>
         ))}
+      {editVisible && (
+        <EditItem
+          setEditVisible={setEditVisible}
+          selectedMenuItem={selectedMenuItem}
+        />
+      )}
     </>
   );
 };
