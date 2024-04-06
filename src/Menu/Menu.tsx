@@ -5,9 +5,11 @@ import { Button, Header, Subtitle, Title } from "./Styled-components";
 import AddItem from "../AddItem/AddItem";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import EditItem from "../EditItem/EditItem";
 
 const Menu = () => {
   const [showAddItem, setShowAddItem] = useState<boolean>(false);
+  const [editVisible, setEditVisible] = useState<boolean>(false);
 
   return (
     <div
@@ -25,10 +27,11 @@ const Menu = () => {
         </Button>
       </Header>
       <Grid>
-        <MenuItem />
+        <MenuItem setEditVisible={setEditVisible} />
       </Grid>
       <ToastContainer />
       {showAddItem && <AddItem setShowAddItem={setShowAddItem} />}
+      {editVisible && <EditItem setEditVisible={setEditVisible} />}
     </div>
   );
 };

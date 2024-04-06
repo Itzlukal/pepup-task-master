@@ -15,6 +15,7 @@ import {
 } from "./Styled-components";
 import { handleDelete } from "../../Utils/useDelete";
 import { useMenuItemLogic } from "./useMenuItemLogic";
+import { EditItemProps } from "../../EditItem/EditItem";
 
 export interface MenuItemData {
   description: string;
@@ -26,14 +27,11 @@ export interface MenuItemData {
   image: string;
 }
 
-const MenuItem = () => {
-  const {
-    menuItems,
-    isSmallScreen,
-
-    handleEditItemClick,
-    setMenuItems,
-  } = useMenuItemLogic();
+const MenuItem = ({ setEditVisible }: EditItemProps) => {
+  const { menuItems, isSmallScreen, handleEditItemClick, setMenuItems } =
+    useMenuItemLogic({
+      setEditVisible,
+    });
 
   return (
     <>

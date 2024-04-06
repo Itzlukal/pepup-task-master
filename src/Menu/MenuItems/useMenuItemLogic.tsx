@@ -2,11 +2,11 @@
 import { useState, useEffect } from "react";
 import { useMenuItems } from "../../Utils/useMenuItems";
 import { MenuItemData } from "./MenuItem";
+import { EditItemProps } from "../../EditItem/EditItem";
 
-export const useMenuItemLogic = () => {
+export const useMenuItemLogic = ({ setEditVisible }: EditItemProps) => {
   const [menuItems, setMenuItems] = useState<MenuItemData[]>([]);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
-  const [isEditItemVisible, setIsEditItemVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const loadMenuItems = async () => {
@@ -35,14 +35,13 @@ export const useMenuItemLogic = () => {
     };
   }, []);
   const handleEditItemClick = () => {
-    setIsEditItemVisible(true);
+    setEditVisible(true);
   };
 
   return {
     menuItems,
     isSmallScreen,
-    isEditItemVisible,
-    setIsEditItemVisible,
+    setEditVisible,
     handleEditItemClick,
     setMenuItems,
   };
