@@ -10,6 +10,7 @@ import {
 } from "../AddItem/Styled-components";
 import CloseIcon from "@mui/icons-material/Close";
 import { MenuItemData } from "../Menu/MenuItems/MenuItem";
+import useEditItemLogic from "../Utils/useEdit";
 
 export interface EditItemProps {
   setEditVisible: React.Dispatch<React.SetStateAction<boolean>>;
@@ -17,21 +18,19 @@ export interface EditItemProps {
 }
 
 const EditItem = ({ setEditVisible, selectedMenuItem }: EditItemProps) => {
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState("");
-  const [ingredients, setIngredients] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-  const [score, setScore] = useState("");
-
-  useEffect(() => {
-    if (selectedMenuItem) {
-      setName(selectedMenuItem.dish_name);
-      setPrice(selectedMenuItem.price.toString());
-      setIngredients(selectedMenuItem.ingredients.join(", "));
-      setImageUrl(selectedMenuItem.image);
-      setScore(selectedMenuItem.score.toString());
-    }
-  }, [selectedMenuItem]);
+  const {
+    name,
+    setName,
+    price,
+    setPrice,
+    ingredients,
+    setIngredients,
+    imageUrl,
+    setImageUrl,
+    score,
+    setScore,
+    handleSave,
+  } = useEditItemLogic({ setEditVisible, selectedMenuItem });
 
   return (
     <Container>
@@ -94,7 +93,7 @@ const EditItem = ({ setEditVisible, selectedMenuItem }: EditItemProps) => {
         {imageUrl && <CustomImage src={imageUrl} alt="Uploaded Image" />}
       </GridContainer>
       <ButtonWrapper>
-        <Button onClick={() => {}}>Save</Button>
+        <Button onClick={() => handleSave(selectedMenuItem?.id)}>Save</Button>
       </ButtonWrapper>
     </Container>
   );

@@ -14,7 +14,7 @@ import { handleAddDish } from "../Utils/useAdd";
 import { MenuItemData } from "../Menu/MenuItems/MenuItem";
 
 export interface NewItem {
-  name: string;
+  dish_name: string;
   price: number;
   score: number;
   ingredients: string;
@@ -95,7 +95,7 @@ const AddItem = ({ setShowAddItem, setMenuItems }: AddItemProps) => {
           onClick={() => {
             handleAddDish(
               {
-                name,
+                dish_name: name,
                 price: Number(price),
                 score: Number(score),
                 ingredients,

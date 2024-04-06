@@ -16,34 +16,32 @@
       "price": 1
     },
     {
-      "id": "3",
       "dish_name": "Caprese Salad",
-      "description": "Traditional Italian salad with fresh tomatoes, mozzarella cheese, basil, and balsamic glaze.",
-      "score": 7,
-      "image": "https://freepngimg.com/thumb/food/139065-food-plate-fish-free-download-png-hq.png",
+      "price": 9.99,
       "ingredients": [
         "Tomatoes",
-        "Fresh mozzarella",
-        "Basil",
-        "Balsamic glaze",
-        "Extra virgin olive oil"
+        "      Fresh mozzarella",
+        "      Basil",
+        "      Balsamic glaze",
+        "      Extra virgin olive oil"
       ],
-      "price": 9.99
+      "image": "https://freepngimg.com/thumb/food/139065-food-plate-fish-free-download-png-hq.png",
+      "score": 7,
+      "id": "3"
     },
     {
-      "id": "4",
       "dish_name": "Chicken Alfredo",
-      "description": "Creamy Alfredo sauce tossed with grilled chicken and fettuccine pasta.",
-      "score": 9,
-      "image": "https://i.pinimg.com/originals/6d/e8/cf/6de8cf9964ada92c0318af47aeb1be17.png",
+      "price": 13.99,
       "ingredients": [
         "Chicken breast",
-        "Fettuccine pasta",
-        "Heavy cream",
-        "Parmesan cheese",
-        "Garlic"
+        "  Fettuccine pasta",
+        "  Heavy cream",
+        "  Parmesan cheese",
+        "  Garlic"
       ],
-      "price": 13.99
+      "image": "https://i.pinimg.com/originals/6d/e8/cf/6de8cf9964ada92c0318af47aeb1be17.png",
+      "score": 9,
+      "id": "4"
     },
     {
       "id": "5",

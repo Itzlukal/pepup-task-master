@@ -3,18 +3,18 @@ import { toast } from "react-toastify";
 
 //this is logic for adding a item to the menu
 export const handleAddItem = ({
-  name,
+  dish_name: name,
   price,
   score,
   ingredients,
   imageUrl,
 }: NewItem) => {
   const newItem = {
-    name,
-    price,
-    score,
+    dish_name: name,
+    price: Number(price),
     ingredients: ingredients.split(","),
-    imageUrl,
+    image: imageUrl,
+    score: Number(score),
   };
 
   fetch("http://localhost:3000/menu", {
@@ -49,7 +49,7 @@ export const ToastWarning = () => {
   });
 };
 export const ToastSuccess = () => {
-  toast.success("Item Added Succesfully !", {
+  toast.success("Item Added Successfully !", {
     position: window.innerWidth < 768 ? "top-center" : "top-right",
     autoClose: 3000,
     hideProgressBar: false,
@@ -62,12 +62,12 @@ export const ToastSuccess = () => {
 
 //this is eventHandler which handles adding a dish
 export const handleAddDish = (
-  { name, price, ingredients, imageUrl, score }: NewItem,
+  { dish_name, price, ingredients, imageUrl, score }: NewItem,
   { setShowAddItem }: AddItemProps
 ) => {
-  if (name && price && ingredients && imageUrl && score) {
+  if (dish_name && price && ingredients && imageUrl && score) {
     const newItem: NewItem = {
-      name,
+      dish_name,
       price: Number(price),
       score: Number(score),
       ingredients,
