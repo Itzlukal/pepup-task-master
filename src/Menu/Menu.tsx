@@ -1,5 +1,5 @@
 import { useState } from "react";
-import MenuItem, { MenuItemData } from "./MenuItems/MenuItem";
+import MenuItem from "./MenuItems/MenuItem";
 import { Grid } from "./MenuItems/Styled-components";
 import { Button, Header, Subtitle, Title } from "./Styled-components";
 import AddItem from "../AddItem/AddItem";
