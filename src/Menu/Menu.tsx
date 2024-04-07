@@ -5,24 +5,9 @@ import { Button, Header, Subtitle, Title } from "./Styled-components";
 import AddItem from "../AddItem/AddItem";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import EditItem from "../EditItem/EditItem";
 
 const Menu: React.FC = () => {
-  const [editedMenuItem, setEditedMenuItem] = useState<MenuItemData | null>(
-    null
-  );
-
   const [showAddItem, setShowAddItem] = useState<boolean>(false);
-
-  // const handleEditItemClick = (menuItemData: MenuItemData) => {
-  //   setEditedMenuItem(menuItemData);
-  //   setEditVisible(true);
-  // };
-
-  // const handleEditSubmit = (editedData: MenuItemData) => {
-  //   // Handle submission logic
-  //   setEditVisible(false);
-  // };
 
   return (
     <div

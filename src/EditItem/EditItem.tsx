@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Button } from "../Menu/Styled-components";
 import {
   ButtonWrapper,

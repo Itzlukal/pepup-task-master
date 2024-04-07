@@ -15,7 +15,7 @@ import {
 } from "./Styled-components";
 import { handleDelete } from "../../Utils/useDelete";
 import { useMenuItemLogic } from "./useMenuItemLogic";
-import EditItem, { EditItemProps } from "../../EditItem/EditItem";
+import EditItem from "../../EditItem/EditItem";
 import { useState } from "react";
 
 export interface MenuItemData {
