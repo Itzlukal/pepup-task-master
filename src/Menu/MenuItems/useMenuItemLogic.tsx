@@ -19,7 +19,7 @@ export const useMenuItemLogic = ({ setEditVisible }: EditItemProps) => {
     };
 
     loadMenuItems();
-  }, [menuItems]);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
