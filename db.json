@@ -34,10 +34,10 @@
       "price": 13.99,
       "ingredients": [
         "Chicken breast",
-        "  Fettuccine pasta",
-        "  Heavy cream",
-        "  Parmesan cheese",
-        "  Garlic"
+        "     Fettuccine pasta",
+        "     Heavy cream",
+        "     Parmesan cheese",
+        "     Garlic"
       ],
       "image": "https://i.pinimg.com/originals/6d/e8/cf/6de8cf9964ada92c0318af47aeb1be17.png",
       "score": 9,

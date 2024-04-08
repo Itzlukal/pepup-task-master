@@ -76,6 +76,9 @@ export const handleAddDish = (
     handleAddItem(newItem);
     setShowAddItem(false);
     ToastSuccess();
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   } else {
     ToastWarning();
   }

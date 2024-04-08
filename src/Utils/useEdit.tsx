@@ -54,6 +54,9 @@ const useEditItemLogic = ({
       if (response.ok) {
         ToastSuccess();
         setEditVisible(false);
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       } else {
         ToastWarning();
       }
